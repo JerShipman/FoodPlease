@@ -1,12 +1,5 @@
-Arby's
-Braum's
-Chick-fil-a
-McDonald's
-Panda
-Pizza Hut
-QT food
-Sonic
-Subway
-Taco Bell
-Taco Bueno
-Whataburger
+in
+dad
+hello
+yes
+

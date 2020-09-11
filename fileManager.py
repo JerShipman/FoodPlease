@@ -16,14 +16,11 @@ def copyToList(listNumber):
     file.close()
     return lists
 
-def saveToFile(fileNumber, listA):
+def saveToFile(fileNumber, newList):
     fileName = getFileName(fileNumber)
-
-
-    #will append
-    file = open(fileName, "w+")
-    for x in range(len(listA)):
-        print(listA[x], end='', file=file)
+    file = open(fileName,"w")
+    for x in range(len(newList)):
+        print(newList[x], end='', file=file)
     file.close()
    
     
