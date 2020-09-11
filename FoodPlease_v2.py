@@ -12,7 +12,8 @@ def pickForMe(arr):
 # print the options from the list
 def displayMenu(arr):
     for i in range(len(arr)):
-        print(str(i) + ".) " + arr[i], end='')
+        if i != '' or i != ' ':
+            print(str(i) + ".) " + arr[i], end='')
 
 
 def addToList(list2Fix, listNum):
@@ -26,10 +27,16 @@ def addToList(list2Fix, listNum):
 
 
 def removeFromList(list2Fix, listNum):
-    print("what do you want to Remove?")
+    print("what do you want to Remove? (seperate with commas)")
+    displayMenu(list2Fix)
     userInput = input()
-    list2Fix.remove(userInput + "\n")
-    fileManager.saveToFile(listNum, list2Fix)
+    inputList = userInput.split(",")
+    for i in range(len(inputList)):
+        for j in range(len(list2Fix)):
+            if i == j:
+                list2Fix.remove(list2Fix[i])
+    print(list2Fix)
+    #fileManager.saveToFile(listNum, list2Fix)
 
 
 # the dine out option
