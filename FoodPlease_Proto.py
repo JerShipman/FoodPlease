@@ -7,6 +7,12 @@ dineOutList = []
 def pickForMe(arr):
     return int(random.choice(arr))
 
+def checkQuit(check):
+    if check == "quit":
+        quit()
+    else:
+        return
+
 # print the options from the list
 def displayMenu(arr):
     for i in range(len(arr)):
@@ -17,6 +23,7 @@ def displayMenu(arr):
 def addToList(list2Fix, listNum):
     print("what do you want to add? Please separate with commas like")
     userInput = input()
+    checkQuit(userInput)
     inputList = userInput.split(",")
     for i in range(len(inputList)):
         inputList[i] += '\n'
@@ -28,6 +35,7 @@ def removeFromList(list2Fix, listNum):
     print("what do you want to Remove? (seperate with space and put items in acending order)")
     displayMenu(list2Fix)
     userInput = input()
+    checkQuit(userInput)
     inputList = userInput.split(" ")
     counter = 0
     for i in inputList:
@@ -46,6 +54,7 @@ def foodUpdate(listNum):
 
     print("\nAre you looking to \nA: Add\nB: Remove\nC: Go back to main menu")
     choice = input()
+    checkQuit(choice)
     if choice == "a":
         addToList(listToFix, listNum)
     elif choice == "b":
@@ -67,11 +76,13 @@ def dineOptionSelected(option):
 
     displayMenu(foodList)
     choice = input()
+    checkQuit(choice)
     selectedChoices = choice.split(" ")
     randomChosen = pickForMe(selectedChoices)
     print(foodList[randomChosen])
     print("Not happy, redo by typing \"r\". You can go to the main menu by typing \"m\".")
     choice = input()
+    checkQuit(choice)
     if choice == "r":
         selectedChoices.remove(str(randomChosen))
         randomChosen = pickForMe(selectedChoices)
@@ -85,6 +96,7 @@ def dineOptionSelected(option):
 def updateMenus():
     print("\nUpdate Menus\nA: Dine Out options\nB: Cook Food options\nC: Go back")
     userIput = input()
+    checkQuit(userInput)
     choice = userIput.lower()
     if choice == 'a':
         foodUpdate(1)
@@ -117,4 +129,3 @@ if __name__ == "__main__":
     quitBool = selectDiningOption()
     while quitBool != 1: #checks to see if user is ready to quit
          quitBool = selectDiningOption()
-    

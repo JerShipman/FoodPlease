@@ -22,11 +22,18 @@ def saveToFile(fileNumber, newList):
     for x in range(len(newList)):
         print(newList[x], end='', file=file)
     file.close()
-   
+
+def checkForFiles():
+    file = open('inchoices.txt', 'a+')
+    file.close()
+    file = open('outchoices.txt', 'a+')
+    file.close()
+
     
 def downloadFilesToLists():
     eatInList = []
     eatOutList = []
+    checkForFiles()
 
     print("downloading files...")
     eatOutList = copyToList(1)
