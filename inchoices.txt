@@ -10,3 +10,7 @@ Pizza
 Salad
 Chicken and Rice
 Pasta
+Hamburger Helper
+Taco ring
+Jalapeno chicken bacon ranch
+Grilled cheese
