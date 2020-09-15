@@ -34,6 +34,3 @@ def downloadFilesToLists():
 
     print("done downloading files\n")
     return eatInList, eatOutList
-
-
-

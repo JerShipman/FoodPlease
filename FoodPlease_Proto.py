@@ -56,40 +56,26 @@ def foodUpdate(listNum):
         print("Invalid input")
         return
 
-# the dine out option
-def dineOut():
-    print("\nDining Out")
-    displayMenu(dineOutList)
-    choice = input()
-    selectedChoices = choice.split(" ")
-    randomChosen = pickForMe(selectedChoices)
-    print(dineOutList[randomChosen])
-    print("Not happy, redo by typing \"r\". You can go to the main menu by typing \"m\".")
-    choice = input()
-    if choice == "r":
-        selectedChoices.remove(str(randomChosen))
-        randomChosen = pickForMe(selectedChoices)
-        print(dineOutList[randomChosen])
-        print("If you still aren't happy... that just means you are really picky!")
-        quit()
+#will pass which dine option the user selected
+def dineOptionSelected(option):
+    if option == 1:
+       print("\nDining Out")
+       foodList = dineOutList
     else:
-        return
+        print("\nDining in")
+        foodList = dineInList
 
-
-# the dine in option
-def dineIn():
-    print("\nDining in")
-    displayMenu(dineInList)
+    displayMenu(foodList)
     choice = input()
     selectedChoices = choice.split(" ")
     randomChosen = pickForMe(selectedChoices)
-    print(dineInList[randomChosen])
+    print(foodList[randomChosen])
     print("Not happy, redo by typing \"r\". You can go to the main menu by typing \"m\".")
     choice = input()
     if choice == "r":
         selectedChoices.remove(str(randomChosen))
         randomChosen = pickForMe(selectedChoices)
-        print(dineInList[randomChosen])
+        print(foodList[randomChosen])
         print("If you still aren't happy... that just means you are really picky!")
         quit()
     else:
@@ -113,10 +99,10 @@ def selectDiningOption():
     userIput = input()
     choice = userIput.lower()
     if choice == 'a':
-        dineOut()
+        dineOptionSelected(1)
         return 0
     elif choice == 'b':
-        dineIn()
+        dineOptionSelected(2)
         return 0
     elif choice == 'c':
         updateMenus()
