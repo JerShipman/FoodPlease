@@ -1,5 +1,6 @@
 import fileManager
 import random
+import os
 
 dineInList = []
 dineOutList = []
@@ -13,6 +14,9 @@ def checkQuit(check):
     else:
         return
 
+def clearScreen():
+    os.system("cls")
+
 # print the options from the list
 def displayMenu(arr):
     for i in range(len(arr)):
@@ -21,7 +25,8 @@ def displayMenu(arr):
 
 #adds items to list and then saves it to the file
 def addToList(list2Fix, listNum):
-    print("what do you want to add? Please separate with commas like")
+    clearScreen()
+    print("what do you want to add? Please separate with commas like Subway,Speghetti,Taco Bell")
     userInput = input()
     checkQuit(userInput)
     inputList = userInput.split(",")
@@ -32,6 +37,7 @@ def addToList(list2Fix, listNum):
 
 #removes items from list and then saves the list to file
 def removeFromList(list2Fix, listNum):
+    clearScreen()
     print("what do you want to Remove? (seperate with space and put items in acending order)")
     displayMenu(list2Fix)
     userInput = input()
@@ -47,6 +53,7 @@ def removeFromList(list2Fix, listNum):
 
 #updates the menus
 def foodUpdate(listNum):
+    clearScreen()
     if listNum == 1:
         listToFix = dineOutList
     else:
@@ -67,6 +74,7 @@ def foodUpdate(listNum):
 
 #will pass which dine option the user selected
 def dineOptionSelected(option):
+    clearScreen()
     if option == 1:
        print("\nDining Out")
        foodList = dineOutList
@@ -94,10 +102,11 @@ def dineOptionSelected(option):
 
 # the update menus option which will allow you to delete from the file
 def updateMenus():
+    clearScreen()
     print("\nUpdate Menus\nA: Dine Out options\nB: Cook Food options\nC: Go back")
-    userIput = input()
+    userInput = input()
     checkQuit(userInput)
-    choice = userIput.lower()
+    choice = userInput.lower()
     if choice == 'a':
         foodUpdate(1)
     elif choice == 'b':
@@ -107,6 +116,7 @@ def updateMenus():
 
 #allows user to select if they want to eat in or dine out or update menus
 def selectDiningOption():
+    clearScreen()
     print("\nDo you want to \nA: Dine Out\nB: Cook Food\nC: Update Menus\nD: Quit")
     userIput = input()
     choice = userIput.lower()
@@ -127,5 +137,6 @@ def selectDiningOption():
 if __name__ == "__main__":
     dineInList, dineOutList = fileManager.downloadFilesToLists()
     quitBool = selectDiningOption()
+    clearScreen()
     while quitBool != 1: #checks to see if user is ready to quit
          quitBool = selectDiningOption()
