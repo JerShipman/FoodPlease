@@ -26,7 +26,7 @@ def displayMenu(arr):
 #adds items to list and then saves it to the file
 def addToList(list2Fix, listNum):
     clearScreen()
-    print("what do you want to add? Please separate with commas like Subway,Speghetti,Taco Bell")
+    print("what do you want to add? Please separate with commas like Subway,Speghetti,Taco Bell(type quit if needed)")
     userInput = input()
     checkQuit(userInput)
     inputList = userInput.split(",")
@@ -38,7 +38,7 @@ def addToList(list2Fix, listNum):
 #removes items from list and then saves the list to file
 def removeFromList(list2Fix, listNum):
     clearScreen()
-    print("what do you want to Remove? (seperate with space and put items in acending order)")
+    print("what do you want to Remove? (seperate with space and put items in acending order)(type quit if needed")
     displayMenu(list2Fix)
     userInput = input()
     checkQuit(userInput)
@@ -117,7 +117,7 @@ def updateMenus():
 #allows user to select if they want to eat in or dine out or update menus
 def selectDiningOption():
     clearScreen()
-    print("\nDo you want to \nA: Dine Out\nB: Cook Food\nC: Update Menus\nD: Quit")
+    print("\nDo you want to \nA: Dine Out\nB: Cook Food\nC: Update Menus\nQ: Quit")
     userIput = input()
     choice = userIput.lower()
     if choice == 'a':
@@ -129,7 +129,7 @@ def selectDiningOption():
     elif choice == 'c':
         updateMenus()
         return 0
-    elif choice == "d":
+    elif choice == "q":
         return 1
     else:
         return 0
