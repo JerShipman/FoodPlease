@@ -1,7 +1,7 @@
 # FoodPlease
 A quick python program that helps me decide what I am going to eat for diner.
 I made this because I am always fighting with significant other about what we are going to eat.
-Currently, I am making an iOS in swift based off this project for my senior project. I will include a link to that gitHub when the project is completed.
+Currently, I am making an iOS in swift based off this project for my senior project. This is a link to that project [Foodie](https://github.com/JerShipman/Foodie)...just know I am still working on it and it will be complete soon!
 
 ## How to use
 There are four main files. 
